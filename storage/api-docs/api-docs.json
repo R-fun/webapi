@@ -1,0 +1,1590 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Web Umkm",
+        "description": "This For API System,And You Can Try It",
+        "contact": {
+            "email": "muhammadalghifari4321@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8000/api/",
+            "description": "Demo API Server"
+        }
+    ],
+    "paths": {
+        "/barang": {
+            "get": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Looking Data Barang",
+                "description": "Looking Data Barang",
+                "operationId": "getBarang",
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Insert Data Barang Admin",
+                "description": "Insert Data Barang Admin",
+                "operationId": "insertBarang",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nama_barang": {},
+                                    "merk": {},
+                                    "category": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/barang/{id}": {
+            "get": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Get By Id Data Barang",
+                "description": "Get By Id Data Barang",
+                "operationId": "getByIdBarang",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Enter Id Data For Get Data And Relation",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Update Data Barang Admin",
+                "description": "Update Data Barang Admin",
+                "operationId": "updateBarang",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Enter Id Data For Update",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nama_barang": {},
+                                    "merk": {},
+                                    "category": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Delete Data Barang Admin",
+                "description": "Delete Data Barang Admin",
+                "operationId": "deleteBarang",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Enter Id Data For Delete",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/count/barang": {
+            "get": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Count Data Barang",
+                "description": "Count Data Barang",
+                "operationId": "countBarang",
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/order/barang": {
+            "get": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Order By Descending Data Barang",
+                "description": "Order By Descending Data Barang",
+                "operationId": "orderBarang",
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/barang/updateharga": {
+            "post": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Update Harga from Log By Barang and Toko",
+                "description": "Update Harga from Log By Barang and Toko",
+                "operationId": "updatehargaLog",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "barang_id": {},
+                                    "toko_id": {},
+                                    "harga_barang": {},
+                                    "satuan": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/filter/barang": {
+            "post": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Filter Data Barang By Toko",
+                "description": "Filter Data Barang By Toko",
+                "operationId": "filterBarang",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "toko": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/barangtoko": {
+            "get": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Looking Data Barang And Toko",
+                "description": "Looking Data Barang And Toko",
+                "operationId": "getBarangToko",
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Insert Data BarangToko Admin",
+                "description": "Insert Data BarangToko Admin",
+                "operationId": "insertBarangToko",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "barang_id": {},
+                                    "toko_id": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/barangtoko/{id}": {
+            "get": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Get By Id Data Barang And Toko",
+                "description": "Get By Id Data Barang And Toko",
+                "operationId": "getByIdBarangToko",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Enter Id Data For Get Data And Relation",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Update Data BarangToko Admin",
+                "description": "Update Data BarangToko Admin",
+                "operationId": "updateBarangToko",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Enter Id Data For Update",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "barang_id": {},
+                                    "toko_id": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Delete Data BarangToko Admin",
+                "description": "Delete Data BarangToko Admin",
+                "operationId": "deleteBarangToko",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Enter Id Data For Delete",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/category": {
+            "get": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Looking Data Category",
+                "description": "Looking Data Category",
+                "operationId": "getCategory",
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Insert Data Category Admin",
+                "description": "Insert Data Category Admin",
+                "operationId": "insertCategory",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "category": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/category/{id}": {
+            "get": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Get By Id Data Category",
+                "description": "Get By Id Data Category",
+                "operationId": "getByIdCategory",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Enter Id Data For Get Data And Relation",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Update Data Category Admin",
+                "description": "Update Data Category Admin",
+                "operationId": "updateCategory",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Enter Id Data For Update",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "category": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Delete Data Category Admin",
+                "description": "Delete Data Category Admin",
+                "operationId": "deleteCategory",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Enter Id Data For Delete",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/compare/barang": {
+            "get": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Compare Feature Barang Admin",
+                "description": "Compare Feature Barang Admin",
+                "operationId": "compareFeature",
+                "parameters": [
+                    {
+                        "name": "barang_id",
+                        "in": "query",
+                        "description": "Id Barang",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/compare": {
+            "post": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Compare Price Barang Admin",
+                "description": "Compare Price Barang Admin",
+                "operationId": "comparePrice",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "barang_id": {},
+                                    "first_toko_id": {},
+                                    "second_toko_id": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/jenistoko": {
+            "get": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Looking Data JenisToko",
+                "description": "Looking Data JenisToko",
+                "operationId": "getjenisToko",
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Insert Data JenisToko Admin",
+                "description": "Insert Data JenisToko Admin",
+                "operationId": "insertJenisToko",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "jenis_toko": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/jenistoko/{id}": {
+            "get": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Get By Id Data JenisToko Admin",
+                "description": "Get By Id Data JenisToko Admin",
+                "operationId": "getByIdjenisToko",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Enter Id Data For Get Data And Relation",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Update Data JenisToko Admin",
+                "description": "Update Data JenisToko Admin",
+                "operationId": "updateJenisToko",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Enter Id Data For Update",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "jenis_toko": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Delete Data JenisToko Admin",
+                "description": "Delete Data JenisToko Admin",
+                "operationId": "deleteJenisToko",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Enter Id Data For Delete",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/log": {
+            "get": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Looking Data Log",
+                "description": "Looking Data Log",
+                "operationId": "getLog",
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/log/{id}": {
+            "get": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Get By Id Data Logging",
+                "description": "Get By Id Data Logging",
+                "operationId": "getByIdLogging",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Enter Id Data For Get Data And Relation",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/getdata/log": {
+            "post": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "get Data Log By Barang and Toko",
+                "description": "get Data Log By Barang and Toko",
+                "operationId": "getDataLog",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "barang_id": {},
+                                    "toko_id": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/filter/log": {
+            "post": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Filter Data Log By Barang",
+                "description": "Filter Data Log By Barang",
+                "operationId": "filterLog",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "tanggalmulai": {},
+                                    "tanggalakhir": {},
+                                    "toko": {},
+                                    "barang_id": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/order/log": {
+            "get": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Looking Data Log order",
+                "description": "Looking Data Log order",
+                "operationId": "getorderLog",
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/export/log/{id}": {
+            "get": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Export Data Logging",
+                "description": "Export Data Logging",
+                "operationId": "exportLogging",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Enter Id Data For Get Data And Relation",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/login": {
+            "post": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Login Admin,for admin i guess",
+                "description": "Login Admin,for admin i guess",
+                "operationId": "login",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "email": {},
+                                    "password": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/register": {
+            "post": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Register Admin,for admin i guess",
+                "description": "Register Admin,for admin i guess",
+                "operationId": "register",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {},
+                                    "email": {},
+                                    "password": {},
+                                    "role": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/satuan": {
+            "get": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Looking Data Satuan",
+                "description": "Looking Data Satuan",
+                "operationId": "getSatuan",
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Insert Data Satuan",
+                "description": "Insert Data Satuan",
+                "operationId": "insertSatuan",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "satuan": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/satuan/{id}": {
+            "get": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Get By Id Data Satuan",
+                "description": "Get By Id Data Satuan",
+                "operationId": "getByIdSatuan",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Enter Id Data For Get Data And Relation",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Update Data Satuan",
+                "description": "Update Data Satuan",
+                "operationId": "updateSatuan",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Enter Id Data For Update",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "satuan": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Delete Data Satuan",
+                "description": "Delete Data Satuan",
+                "operationId": "deleteSatuan",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Enter Id Data For Delete",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/toko": {
+            "get": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Looking Data Toko",
+                "description": "Looking Data Toko",
+                "operationId": "getToko",
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Insert Data Toko Admin",
+                "description": "Insert Data Toko Admin",
+                "operationId": "insertToko",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nama_toko": {},
+                                    "alamat": {},
+                                    "user_id": {},
+                                    "jenis_toko": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/toko/{id}": {
+            "get": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Get By Id Data Toko Admin",
+                "description": "Get By Id Data Toko Admin",
+                "operationId": "getByIdToko",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Enter Id Data For Get Data And Relation",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Update Data Toko Admin",
+                "description": "Update Data Toko Admin",
+                "operationId": "updateToko",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Enter Id Data For Update",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nama_toko": {},
+                                    "alamat": {},
+                                    "user_id": {},
+                                    "jenis_toko": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Delete Data Toko Admin",
+                "description": "Delete Data Toko Admin",
+                "operationId": "deleteToko",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Enter Id Data For Delete",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/count/toko": {
+            "get": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Count Data Toko",
+                "description": "Count Data Toko",
+                "operationId": "countToko",
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/order/toko": {
+            "get": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Order Descending Data Toko",
+                "description": "Order Descending Data Toko",
+                "operationId": "orderToko",
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/toko/barang": {
+            "post": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Get Data Barang Toko Admin",
+                "description": "Get Data Barang Toko Admin",
+                "operationId": "getDataBarangByToko",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "toko": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/filter/toko": {
+            "post": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Filter Data Toko By Jenis Toko",
+                "description": "Filter Data Toko By Jenis Toko",
+                "operationId": "filterToko",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "jenis_toko": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/users": {
+            "get": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Looking Account Admin",
+                "description": "Looking For Account Admin Login",
+                "operationId": "users",
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "update profile admin",
+                "description": "update profile Admin",
+                "operationId": "updateprofile",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "user_id": {},
+                                    "email": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/user/{id}": {
+            "get": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Get By Id Data User",
+                "description": "Get By Id Data User",
+                "operationId": "getByIdUser",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Enter Id Data For Get Data And Relation",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "Delete Data User Admin",
+                "description": "Delete Data User Admin",
+                "operationId": "deleteUser",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Enter Id Data For Delete",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/user/password": {
+            "put": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "update password user",
+                "description": "update password user",
+                "operationId": "updatepassword",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "user_id": {},
+                                    "password_baru": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/admin/password": {
+            "put": {
+                "tags": [
+                    "Projects UMKM"
+                ],
+                "summary": "update password admin",
+                "description": "update password Admin",
+                "operationId": "updatepasswordAdmin",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "user_id": {},
+                                    "password_lama": {},
+                                    "password_baru": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Welcome page"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "description": "Use a global client_id / client_secret and your username / password combo to obtain a token",
+                "name": "Authorization",
+                "in": "header",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Projects UMKM",
+            "description": "Endpoint API Project"
+        }
+    ],
+    "security": [
+        {
+            "bearer": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        }
+    ]
+}
